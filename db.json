@@ -10,7 +10,7 @@
 	  "name": "CustomerForm",
 	  "customer_email": "email",
 	  "customer_phone": "phone",
-	  "order_date": "date"
+	  "customer_date": "date"
 	},
 	"3": {
 	  "name": "UserRegister",
