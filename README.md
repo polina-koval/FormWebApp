@@ -26,8 +26,12 @@ Startup application
 ## Main url
 - http://127.0.0.1:8000/get_form/ - for post requests.
 
-## Test requests are in test_main.http
-
+## Test requests
+*  test_main.http if you use PyCharm Professional.
+* if you want use command-line:
+    ```sh
+    (venv)$ python test_requests.py
+    ```
 ## Built with
 * [FastAPI](https://fastapi.tiangolo.com/) - The web framework used.
 * [TinyDB](https://tinydb.readthedocs.io/en/latest/) - Database.
