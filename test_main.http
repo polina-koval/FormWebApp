@@ -1,7 +1,37 @@
-# Test your FastAPI endpoints
-
-GET http://127.0.0.1:8000/
+#Expected result - "CustomerForm"
+POST http://127.0.0.1:8000/get_form/
 Accept: application/json
+Content-Type: application/json
+
+{
+  "customer_email": "test@mai.com",
+  "customer_phone": "+7 897 562 36 78",
+  "order_date": "11.11.2022"
+}
 
 ###
+#Expected result - "UserRegister"
+POST http://127.0.0.1:8000/get_form/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user_email": "email@test.com",
+  "user_phone_number": "+7 896 324 15 89",
+  "user_register_date": "2022-12-10"
+}
+
+###
+#Expected result - {
+#  "new_email": "email",
+#  "new_phone_number": "phone"
+#}
+POST http://127.0.0.1:8000/get_form/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "new_email": "email@test.com",
+  "new_phone_number": "+7 896 324 15 89"
+}
 
