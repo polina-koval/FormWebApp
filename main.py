@@ -7,11 +7,6 @@ app = FastAPI()
 db = TinyDB("db.json")
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
 @app.post("/get_form/")
 async def get_form(request: Request):
     body = (await request.body()).decode("utf-8")
