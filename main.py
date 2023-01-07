@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
-from tinydb import TinyDB
+from tinydb import Query, TinyDB
 
-from utils import type_form, is_correct_form
+from utils import predicate, type_form
 
 app = FastAPI()
 db = TinyDB("db.json")
@@ -15,8 +15,8 @@ async def root():
 @app.post("/get_form/")
 async def get_form(request: Request):
     body = await request.json()
-    form = type_form(body)
-    for item in db:
-        if is_correct_form(item, form):
-            return item["name"]
-    return await request.json()
+    form_from_request = type_form(body)
+    form_from_db = db.search(lambda obj: predicate(obj, form_from_request))
+    if form_from_db:
+        return form_from_db[0]["name"]
+    return form_from_request

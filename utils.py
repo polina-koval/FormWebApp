@@ -18,5 +18,8 @@ def type_form(d):
     return res
 
 
-def is_correct_form(request_body, db_item):
-    return set(db_item.keys()).issubset(request_body.keys())
+def predicate(obj, requirements):
+    for k, v in requirements.items():
+        if k not in obj.keys():
+            return False
+    return True
