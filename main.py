@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-from tinydb import Query, TinyDB
+from tinydb import TinyDB
 
 from utils import predicate, type_form
 
